@@ -12,7 +12,7 @@ cloudinary.config({
     force_version: false,
 })
 
-const url = cloudinary.url(`cloudinary-qr-demo/${input}`, {
+const url = cloudinary.url(`cloudinary-qr-demo/${encodeURIComponent(input)}`, {
     effect: "vectorize",
     format: "svg",
 })
