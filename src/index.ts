@@ -2,7 +2,12 @@ import "dotenv/config"
 
 import {v2 as cloudinary} from "cloudinary"
 
-const input = process.argv.at(-1) ?? ""
+if (process.argv.length !== 3) {
+    console.log("Please provide a URL for the QR code.")
+    process.exit(1)
+}
+
+const input = process.argv.at(-1)
 
 cloudinary.config({
     api_key: process.env.CLOUDINARY_API_KEY,
@@ -12,7 +17,7 @@ cloudinary.config({
     force_version: false,
 })
 
-const url = cloudinary.url(`cloudinary-qr-demo/${encodeURIComponent(input)}`, {
+const url = cloudinary.url(`cloudinary-qr-demo/${input}`, {
     effect: "vectorize",
     format: "svg",
 })
