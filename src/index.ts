@@ -19,7 +19,7 @@ cloudinary.config({
 
 const url = cloudinary.url(`cloudinary-qr-demo/${input}`, {
     effect: "vectorize",
-    format: "svg",
+    fetch_format: "svg",
 })
 
 console.log(url)
