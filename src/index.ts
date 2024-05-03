@@ -7,7 +7,6 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET,
     cloud_name: "bradgarropy",
     secure: true,
-    force_version: false,
 })
 
 const cloudinaryUrl = cloudinary.url("cloudinary-qr-demo/bradgarropy.com", {
