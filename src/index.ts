@@ -9,13 +9,16 @@ cloudinary.config({
     secure: true,
 })
 
-const cloudinaryUrl = cloudinary.url("cloudinary-qr-demo/bradgarropy.com", {
-    transformation: [
-        {effect: "make_transparent"},
-        // {effect: "replace_color:red"},
-        // {background: "blue"},
-        {effect: "vectorize", fetch_format: "svg"},
-    ],
-})
+const cloudinaryUrl = cloudinary.url(
+    "cloudinary-qr-demo/https://bradgarropy.com",
+    {
+        transformation: [
+            {effect: "make_transparent"},
+            // {effect: "replace_color:red"},
+            // {background: "blue"},
+            {effect: "vectorize", fetch_format: "svg"},
+        ],
+    },
+)
 
 console.log(cloudinaryUrl)
